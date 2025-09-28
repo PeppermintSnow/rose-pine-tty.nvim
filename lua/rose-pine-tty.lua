@@ -5,21 +5,21 @@
 
 local M = {}
 
--- ANSI color index mapping (must match your fbtermrc)
-local colors = {
-  base = 0,
-  love = 1,
-  pine = 2,
-  gold = 3,
-  foam = 4,
-  iris = 5,
-  rose = 6,
-  text = 7,
-  muted = 8,
-  bright_love = 9,
-}
-
 M.setup = function()
+  opts = opts or {}
+
+  local colors = vim.tbl_extend("force", {
+    base = 0,
+    love = 1,
+    pine = 2,
+    gold = 3,
+    foam = 4,
+    iris = 5,
+    rose = 6,
+    text = 7,
+    muted = 8,
+  }, opts.colors or {})
+
   vim.opt.termguicolors = false
 
   local function hi(group, opts)
