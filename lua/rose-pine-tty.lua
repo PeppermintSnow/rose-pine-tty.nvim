@@ -21,7 +21,6 @@ local colors = {
 
 M.setup = function()
   vim.opt.termguicolors = false
-  vim.opt.t_Co = 16
 
   local function hi(group, opts)
     local parts = { group }
